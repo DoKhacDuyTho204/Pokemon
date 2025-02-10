@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#FFA500"/> <!-- Màu cam -->
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    <item android:right="0dp" android:left="0dp">
+        <shape>
+            <solid android:color="#FFFFFF" /> <!-- Màu nền trắng cho phần trống -->
+        </shape>
+    </item>
+</layer-list>
