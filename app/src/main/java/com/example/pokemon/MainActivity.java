@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.graphics.Color;
+
 
 import Data.DummyData;
 import Model.Pokemon;
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Pokedoke");
+
+        // Đặt màu trắng cho tiêu đề
+        toolbar.setTitleTextColor(Color.WHITE);
 
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);

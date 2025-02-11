@@ -1,12 +1,18 @@
 package com.example.pokemon;
 
+import android.animation.ObjectAnimator;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class PokemonDetailActivity extends AppCompatActivity {
 
@@ -82,7 +88,13 @@ public class PokemonDetailActivity extends AppCompatActivity {
      */
     private void setupProgressBar(ProgressBar progressBar, TextView valueText, int value, int max, int color) {
         progressBar.setMax(max);
-        progressBar.setProgress(value);
+
+        // Tạo animation mượt mà thay đổi giá trị
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, value);
+        animation.setDuration(1000); // Thời gian chạy animation (1 giây)
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
+
         progressBar.getProgressDrawable().setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN);
         valueText.setText(value + "/" + max);
     }
